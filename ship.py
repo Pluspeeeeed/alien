@@ -1,5 +1,6 @@
 import pygame
 
+
 class Ship:
     """define ship"""
 
@@ -13,6 +14,13 @@ class Ship:
 
         self.rect.midbottom = self.screen_rect.midbottom
 
+        self.moving_right = False
+
+    def update(self):
+        """move by flag"""
+        if self.moving_right:
+            self.rect.x += 1
+
     def blitme(self):
-        '''draw ship in pointed position'''
+        """draw ship in pointed position"""
         self.screen.blit(self.image, self.rect)
